@@ -43,7 +43,7 @@ RUN echo "#!/bin/sh\n\
   chmod +x /home/dev/.xsession && \
   chown dev:dev /home/dev/.xsession
 
-COPY start.bash /home/dev/start.bash
+COPY --chown=dev:dev start.bash /home/dev/start.bash
 
 
 FROM xrdp AS xarm
@@ -65,13 +65,13 @@ EXPOSE 3389
 FROM xarm AS avatar_challenge
 
 RUN mkdir -p /home/dev/dev_ws/src
-COPY avatar_challenge /home/dev/dev_ws/src/avatar_challenge
+COPY --chown=dev:dev avatar_challenge /home/dev/dev_ws/src/avatar_challenge
 
 WORKDIR /home/dev/dev_ws
 RUN . /home/dev/xarm_ws/install/setup.sh && colcon build
 
 RUN echo "source /home/dev/dev_ws/install/setup.bash" >> /home/dev/.bashrc
 
-COPY avatar_entrypoint.bash /home/dev/avatar_entrypoint.bash
+COPY --chown=dev:dev avatar_entrypoint.bash /home/dev/avatar_entrypoint.bash
 ENTRYPOINT ["/home/dev/avatar_entrypoint.bash"]
 CMD ["/home/dev/start.bash"]

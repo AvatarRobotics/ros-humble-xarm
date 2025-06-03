@@ -10,18 +10,18 @@ We have created a Docker container with a basic ROS2 package for you to develop 
 1. The following instructions assume you can run Docker as non-root user: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 1. Check that Docker works: `docker run hello-world`
 1. Install the Remmina Remote Desktop Protocol (RDP) client: `sudo apt-get install remmina` or `sudo snap install remmina`
-1. Pull Avatar docker image: `docker pull avatarrobotics/ros-humble-xarm:20250528`
+1. Pull Avatar docker image: `docker pull avatarrobotics/ros-humble-xarm:20250602`
 
 ### MacOS
 
 1. Install Docker: https://docs.docker.com/desktop/setup/install/mac-install/
 1. Check that Docker works: `docker run hello-world`
 1. Install the Windows App (used as the Remote Desktop Protocol (RDP) client): https://apps.apple.com/us/app/windows-app/id1295203466
-1. Pull Avatar docker image: `docker pull avatarrobotics/ros-humble-xarm:20250528`
+1. Pull Avatar docker image: `docker pull avatarrobotics/ros-humble-xarm:20250602`
 
 ## Starting the Container (both Ubuntu and MacOS)
 
-1. In a terminal, start the docker container: `docker run --name xarm-container --platform linux/amd64 -p 5566:3389 avatarrobotics/ros-humble-xarm:20250528`. You should see a message that the container is running.
+1. In a terminal, start the docker container: `docker run --name xarm-container --platform linux/amd64 -p 5566:3389 avatarrobotics/ros-humble-xarm:20250602`. You should see a message that the container is running.
 1. Open the RDP client (either Remmina or Windows App) and connect to `localhost:5566`
 1. Log in with username `dev` and the password that was provided to you.
 1. You should see a full desktop.
@@ -38,4 +38,4 @@ Add your code to the `avatar_challenge` package, and add any launch configuratio
 
 ## Submitting
 
-Create a public GitHub (or similar) git repository with your modified `avatar_challenge` code and a `README.md` describing how to build and run the code, as well as any additional information specified in the challenge. Optionally include a Dockerfile to build an updated image, otherwise we will run the code from the `avatarrobotics/ros-humble-xarm:20250528` container. You do not need to include automated tests.
+Create a public GitHub (or similar) git repository with your modified `avatar_challenge` code and a `README.md` describing how to build and run the code, as well as any additional information specified in the challenge. Optionally include a Dockerfile to build an updated image, otherwise we will run the code from the `avatarrobotics/ros-humble-xarm:20250602` container. You do not need to include automated tests.
